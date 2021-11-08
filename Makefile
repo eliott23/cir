@@ -1,10 +1,11 @@
-CFILES=ft_memset.c
+#MAKEFILE TO TEST EACH .C FILE ALONE
+CFILE=ft_bzero.c
 FLAGS=-Wall -Wextra -Werror
 all : a.out
 	./a.out
-a.out : $(CFILES)
+a.out : $(CFILE)
 	cc $(FLAGS) $^ -I .
-norm : $(filter-out $(CFILES),*.c)
+norm : $(filter-out $(CFILE),*.c)
 	norminette $^
 c :
 	rm a.out
