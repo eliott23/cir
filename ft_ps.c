@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 09:36:56 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/08 14:19:16 by aababach         ###   ########.fr       */
+/*   Created: 2021/11/08 14:20:11 by aababach          #+#    #+#             */
+/*   Updated: 2021/11/08 15:58:07 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdio.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ps(char *str)
 {
-	unsigned char	*a;
-
-	a = (unsigned char *)b;
-	while (len)
-	{
-		*a = c;
-		a++;
-		len--;
-	}
-	return (b);
+	printf ("%s\n", str);
 }
