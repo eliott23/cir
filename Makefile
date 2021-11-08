@@ -1,9 +1,10 @@
+CFILES=ft_memset.c
 FLAGS=-Wall -Wextra -Werror
 all : a.out
 	./a.out
-a.out : *.c
+a.out : $(CFILES)
 	cc $(FLAGS) $^ -I .
-norm : $(filter-out test.c,*.c)
+norm : $(filter-out $(CFILES),*.c)
 	norminette $^
-clean :
+c :
 	rm a.out
