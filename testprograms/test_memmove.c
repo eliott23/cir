@@ -13,13 +13,9 @@ int	main()
 		printf("%c\n", d[i]);
 		i++;
 	}*/
-	int	tab[] = {1,2,3,4,5};
-	int	*t = &tab[2];
-	printf("the desti \n");
-	ft_put_tab(3,t);
-	printf("the src ");
-	ft_put_tab(5,tab);
-	memmove(t,tab,sizeof(int)*3);
-	printf("the new dest ");
-	ft_put_tab(3,t);
+	int	t[] = {1,2,3,4,5};
+	int	*tab = &t[2];
+	ft_memmove(t,tab,sizeof(int)*3);
+	printf("the new dest\n");
+	ft_put_tab(5,t);
 }

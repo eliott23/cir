@@ -15,3 +15,5 @@ v : $(CFILE)
 	cat $^ | grep -v lib
 c :
 	rm a.out
+e :
+	vim $(CFILE)

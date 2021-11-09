@@ -2,5 +2,5 @@
 
 void	pi(int i)
 {
-	printf("%d\n", i);
+	printf("%d", i);
 }
