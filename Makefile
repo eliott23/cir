@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_memmove.c
+CFILE=ft_strlcpy.c
 FLAGS=-Wall -Wextra -Werror
 MYFILES=ft_ps.c ft_pi.c ft_put_tab.c
 all : a.out
