@@ -6,13 +6,14 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/08 17:13:43 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/09 11:24:42 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 void	ps(char *str);
 void	pi(int	*tab);
@@ -26,5 +27,6 @@ size_t	ft_strlen(const char *s); // check
 void	*ft_memset(void *b, int c, size_t len); //check
 void	ft_bzero(void *s, size_t n); // check
 void	*ft_memcpy(void *dst, const void *src, size_t n); //check
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
 #endif

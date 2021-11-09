@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void	pi(int	*tab)
+void	pi(int i)
 {
-	printf("%lf\n", tab);
+	printf("%d\n", i);
 }

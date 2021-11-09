@@ -1,9 +1,9 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_memcpy.c
-FLAGS=-Wall -Wextra -Werror
+CFILE=ft_memmove.c
+FLAGS=
 all : a.out
 	./a.out
-a.out : $(CFILE) ft_pi.c ft_ps.c
+a.out : $(CFILE) ft_ps.c ft_pi.c
 	cc $(FLAGS) $^ -I .
 gn : *.c
 	norminette $^
