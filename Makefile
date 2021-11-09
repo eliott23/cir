@@ -1,12 +1,13 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
 CFILE=ft_memmove.c
 FLAGS=-Wall -Wextra -Werror
+MYFILES=ft_ps.c ft_pi.c ft_put_tab.c
 all : a.out
 	./a.out
-a.out : $(CFILE) ft_ps.c ft_pi.c ft_put_tab.c
+a.out : $(CFILE) $(MYFILES)
 	cc $(FLAGS) $^ -I .
 gn : *.c
-	norminette $^
+	norminette $(filter-out	$(MYFILES),$^)
 n : $(CFILE)
 	norminette $^
 vv : Makefile

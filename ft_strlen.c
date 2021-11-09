@@ -6,11 +6,12 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 15:33:56 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/09 09:51:44 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/09 19:02:11 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
