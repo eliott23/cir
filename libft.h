@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/09 11:24:42 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:23:31 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 #include <stdlib.h>
 #include <string.h>
 void	ps(char *str);
-void	pi(int	*tab);
+void	pi(int	tab);
+void	ft_put_tab(size_t b, int	*c);
 
 int	ft_isalpha(int c); // check
 int	ft_isdigit(int c); // check
