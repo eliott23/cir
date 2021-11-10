@@ -1,6 +1,7 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
 CFILE=ft_strlcat.c
 FLAGS=-Wall -Wextra -Werror
+SFLAGS=-fsanitize=address
 MYFILES=ft_ps.c ft_pi.c ft_put_tab.c
 all : a.out
 	./a.out
@@ -24,3 +25,5 @@ s :
 	alias c="clear"
 git :
 	./gits
+segfault :
+	cc $(FLAGS) $(MYFILES) $(SFLAGS)
