@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/09 19:29:31 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/10 09:49:24 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	*ft_memset(void *b, int c, size_t len); //check
 void	ft_bzero(void *s, size_t n); // check
 void	*ft_memcpy(void *dst, const void *src, size_t n); //check
 void	*ft_memmove(void *dst, const void *src, size_t len); //check
-size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize); //check
 
 #endif
