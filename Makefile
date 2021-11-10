@@ -20,3 +20,5 @@ e :
 	vim $(CFILE)
 ee:
 	vim Makefile
+s :
+	alias c="clear"

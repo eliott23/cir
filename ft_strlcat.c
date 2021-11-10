@@ -10,36 +10,25 @@ size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize
 
 	s_i = 0;
 	s_l = 0;
-	d_i = 0;
 	d_l = 0;
 	while (dst[d_l])
 		d_l++;
 	while (src[s_l])
 		s_l++;
 	return_value = s_l + d_l;
-	while (d_i < (dstsize - d_i) && src[s_i])
+	d_i = d_l;
+	ps("this is the very last index and also the length of dest ");
+	printf("%zu\n",d_i);
+	if (dstsize)
 	{
-	/*	ps("\ndstsize ");
-		printf("%zu",dstsize);
-		ps("this is i ");
-		pi(i);
-	*/
-		dst[d_i] = src[s_i];
-		s_i++;
-		d_i++;
+		while (d_i < (dstsize - 1) && src[s_i])
+		{
+			ps("it went here ");
+			dst[d_i] = src[s_i];
+			s_i++;
+			d_i++;
+		}
+		dst[d_i] = '\0';
 	}
 	return (return_value);
-}
-
-int	main()
-{
-//	char	dst[8] = "Hello";
-//	char	src[] = "Zebi";
-	char	dst1[8] = "Hello";
-	char	src1[] = "Zebi";
-	ps("\n this is the returned value ");	
-	pi (ft_strlcat(dst1,src1,8));
-	ps("\n");
-	//pi(strlcat(dst,src,5));
-	ps(dst1);
 }
