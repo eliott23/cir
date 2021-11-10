@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_strlcpy.c
+CFILE=ft_strlcat.c
 FLAGS=-Wall -Wextra -Werror
 MYFILES=ft_ps.c ft_pi.c ft_put_tab.c
 all : a.out
@@ -18,3 +18,5 @@ c :
 	rm a.out
 e :
 	vim $(CFILE)
+ee:
+	vim Makefile
