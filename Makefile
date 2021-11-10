@@ -22,3 +22,5 @@ ee:
 	vim Makefile
 s :
 	alias c="clear"
+git :
+	./gits
