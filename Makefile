@@ -14,7 +14,7 @@ n : $(CFILE)
 vv : Makefile
 	cat $^
 v : $(CFILE)
-	cat $^ | grep -v lib
+	cat $^ | grep -v libft.h | grep -v ps | grep -v pi
 c :
 	rm a.out
 e :
