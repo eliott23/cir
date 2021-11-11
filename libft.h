@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/11 12:07:32 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/11 15:54:07 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,6 @@ int ft_toupper(int c); //check
 char	*ft_strchr(const char *s, int c); //check
 char	*ft_strrchr(const char *s, int c); //check
 int	ft_strncmp(const char *s1, const char *s2, size_t n); //check
+void	*ft_memchr(const void *s, int c, size_t n); //check
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
 #endif
