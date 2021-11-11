@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_strrchr.c
+CFILE=ft_memcmp.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=*.c
