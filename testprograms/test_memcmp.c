@@ -1,8 +1,7 @@
 int	main()
 {
 	char s1[] = "ZEBI";
-	char *p1 = s1 + 5;
-	char s2[] = "ZEBI";
-	char *p2 = s2 + 5;
-	memset(p1,65,3);
+	char *p1 = s1 + 50;
+	if(s1 < &s1[1])
+		printf("%d\n",1);
 }
