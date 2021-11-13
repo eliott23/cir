@@ -6,28 +6,42 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:17:47 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/13 23:44:10 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 00:14:51 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_numlen(char *s)
+void	ft_skip_signe(int *i, const char *str, int *s)
 {
-	int	i;
+	if (str[*i] == '-' || str[*i] == '+')
+	{
+		if (str[*i] == '-')
+			*(s) *= -1;
+		(*i)++;
+	}
+}
 
-	i = 0;
-	while (s[i] >= '0' && s[i] <= '9')
-		i++;
-	return (i);
+int	ft_count_num(const char *str, int *i)
+{
+	int	l;
+
+	l = 0;
+	while (str[*i] >= '0' && str[*i] <= '9')
+	{
+		l++;
+		(*i)++;
+	}
+	return (l);
 }
 
 int	ft_atoi(const char *str)
 {
 	int						i;
 	int						s;
-	unsigned long long int			rslt;
-	unsigned long long int			h;
+	unsigned long long int	rslt;
+	unsigned long long int	h;
+	int						l;
 
 	h = 9223372036854775807;
 	rslt = 0;
@@ -35,29 +49,25 @@ int	ft_atoi(const char *str)
 	i = 0;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			s *= -1;
-		i++;
-	}
+	ft_skip_signe (&i, str, &s);
+	l = ft_count_num(str, &i);
+	pi(l);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		rslt = rslt * 10 + str[i] - 48;
-		if (rslt > h && s > 0)
+		pi(rslt);
+		if ((rslt > h && s > 0) || (s > 0 && l >= 20))
 			return (-1);
-		if (rslt > h + 1 && s < 0)
+		if ((rslt > h + 1 && s < 0) || (s < 0 && l >= 20))
 			return (0);
 		i++;
 	}
 	return ((int)rslt * s);
 }
 
-int	main( )
+int	main()
 {
-	char	a[] = "9223372036854775807";
-	pi(atoi(a));
-	ps("\n");
-	pi(ft_atoi(a));
-	ps("\n");
+	char x[] = "-34";
+	pi(atoi(x));
+	pi(ft_atoi(x));
 }
