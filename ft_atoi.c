@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:17:47 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/13 19:45:47 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/13 22:24:17 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
 	int						i;
 	int						s;
-	unsigned long long int	rslt;
+	long long int	rslt;
 
 	rslt = 0;
 	s = 1;
@@ -39,10 +39,10 @@ int	ft_atoi(const char *str)
 	return (0);
 }
 
-int	main()
+int	main( )
 {
-char	a[] = "9223372036854775808";
-	pi(ft_atoi(a));
-	ps("\n");
+	char	a[] = "-9223372036854775808";
 	pi(atoi(a));
+	ps("\n");
+	pi(ft_atoi(a));
 }
