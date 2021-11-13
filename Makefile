@@ -1,8 +1,8 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_atoi.c
+CFILE=ft_calloc.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=ft_pi.c ft_ps.c
+MYFILES=ft_pi.c ft_ps.c ft_memset.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)
