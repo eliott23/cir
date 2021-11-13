@@ -6,13 +6,13 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 13:32:02 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/13 22:27:36 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/13 23:40:45 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 void	*ft_calloc(size_t count, size_t size)
 {
 	void			*rtrn;
@@ -28,4 +28,9 @@ void	*ft_calloc(size_t count, size_t size)
 		i++;
 	}
 	return (rtrn);
+}
+int	main()
+{
+	printf("%p\n", malloc(0));
+
 }
