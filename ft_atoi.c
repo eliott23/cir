@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:17:47 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/14 00:14:51 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 00:18:04 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void	ft_skip_signe(int *i, const char *str, int *s)
 	}
 }
 
-int	ft_count_num(const char *str, int *i)
+int	ft_count_num(const char *str, int i)
 {
 	int	l;
 
 	l = 0;
-	while (str[*i] >= '0' && str[*i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		l++;
-		(*i)++;
+		i++;
 	}
 	return (l);
 }
@@ -50,12 +50,11 @@ int	ft_atoi(const char *str)
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	ft_skip_signe (&i, str, &s);
-	l = ft_count_num(str, &i);
+	l = ft_count_num(str, i);
 	pi(l);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		rslt = rslt * 10 + str[i] - 48;
-		pi(rslt);
 		if ((rslt > h && s > 0) || (s > 0 && l >= 20))
 			return (-1);
 		if ((rslt > h + 1 && s < 0) || (s < 0 && l >= 20))
@@ -67,7 +66,7 @@ int	ft_atoi(const char *str)
 
 int	main()
 {
-	char x[] = "-34";
+	char x[] = "99999999999999999999999999999999";
 	pi(atoi(x));
 	pi(ft_atoi(x));
 }
