@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:17:47 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/14 00:18:04 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 00:18:34 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ int	ft_atoi(const char *str)
 		i++;
 	ft_skip_signe (&i, str, &s);
 	l = ft_count_num(str, i);
-	pi(l);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		rslt = rslt * 10 + str[i] - 48;
