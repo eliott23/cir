@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "libft.h"
-void	ft_put_tab(size_t b, int	*c)
+void	ft_put_tab(size_t b, int *c)
 {
 	size_t	i;
 

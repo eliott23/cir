@@ -2,7 +2,7 @@
 CFILE=ft_calloc.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=ft_pi.c ft_ps.c ft_memset.c
+MYFILES=ft_pi.c ft_ps.c ft_put_tab.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)
