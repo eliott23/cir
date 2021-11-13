@@ -1,8 +1,8 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_strdup.c
+CFILE=ft_atoi.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=ft_pi.c ft_ps.c ft_put_tab.c
+MYFILES=ft_pi.c ft_ps.c ft_put_tab.c ft_strlen.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)
