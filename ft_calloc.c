@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/13 13:32:02 by aababach          #+#    #+#             */
+/*   Updated: 2021/11/13 13:32:31 by aababach         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -18,27 +30,4 @@ void	*ft_calloc(size_t count, size_t size)
 		i++;
 	}
 	return (rtrn);
-}
-
-int	main()
-{
-	char *p;
-	char *pt;
-	int	i = 0;
-	pt = calloc(3,sizeof(char));
-	p = ft_calloc(-3,sizeof(char));
-	while (i < 90)
-	{
-		pi (pt[i]);
-		i++;
-	}
-	ps ("\n");
-	i = 0;
-	while (i < 90)
-	{
-		pi (p[i]);
-		i++;
-	}
-	free(p);
-	free(pt);
 }
