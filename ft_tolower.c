@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:29:38 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/10 18:30:58 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/13 13:13:43 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	unsigned char	a;
-
-	a = c;
-	if (a >= 'A' && a <= 'Z')
-		return (a + 32);
-	else
-		return (a);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

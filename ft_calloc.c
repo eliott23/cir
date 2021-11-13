@@ -8,6 +8,8 @@ void	*ft_calloc(size_t count, size_t size)
 	unsigned char	*c;
 
 	rtrn = malloc(count*size);
+	if (rtrn == NULL)
+		return(0);
 	i = 0;
 	c = (unsigned char *)rtrn;
 	while (i < count*size)
@@ -23,8 +25,8 @@ int	main()
 	char *p;
 	char *pt;
 	int	i = 0;
-	pt = calloc(90,sizeof(char));
-	p = ft_calloc(90,sizeof(char));
+	pt = calloc(3,sizeof(char));
+	p = ft_calloc(-3,sizeof(char));
 	while (i < 90)
 	{
 		pi (pt[i]);
@@ -32,7 +34,7 @@ int	main()
 	}
 	ps ("\n");
 	i = 0;
-	while (i < 1000)
+	while (i < 90)
 	{
 		pi (p[i]);
 		i++;
