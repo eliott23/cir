@@ -3,8 +3,10 @@
 {
 }
 */
+
+/* 9-13 && 32*/
 int	main()
 {
-	char h[] = "-	654LSKM09-";
-	pi(atoi(h));
+	char h[] = " \t\n\f\v\r-654LSKM09-";
+	pi(h[0]);
 }

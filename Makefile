@@ -2,7 +2,7 @@
 CFILE=ft_atoi.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=*.c
+MYFILES=ft_pi.c ft_ps.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)
