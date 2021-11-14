@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_strdup.c
+CFILE=ft_atoi.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c ft_strlen.c
@@ -27,6 +27,3 @@ git :
 	./gits
 segfault :
 	cc $(FLAGS) $(MYFILES) $(SFLAGS)
-cp :
-	rm ../libft/$(filter-out $@,$(MAKECMDGOALS))
-	cp $(filter-out $@,$(MAKECMDGOALS)) ../libft/
