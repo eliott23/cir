@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:58:10 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/10 19:57:39 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 19:09:46 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,12 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 		dst[d_l] = '\0';
 	}
 	return (return_value);
+}
+int	main()
+{
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
+	char buff1[0xF00] = "there is no stars in the sky";
+	char buff2[0xF00] = "there is no stars in the sky";
+
+	pi(strlen(str));
 }

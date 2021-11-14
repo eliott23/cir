@@ -6,16 +6,13 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:39:45 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/05 12:38:00 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:20:40 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	unsigned char	a;
-
-	a = c;
-	if ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 09:48:16 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/10 15:14:44 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:57:10 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,12 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 		src_l++;
 	if (dstsize)
 	{
-		dstsize--;
-		while (dstsize--)
+		while (i < dstsize -1 && src[i])
 		{
 			dst[i] = src[i];
 			i++;
 		}
 		dst[i] = '\0';
 	}
-	else
-		dst[i] = '\0';
 	return (src_l);
 }

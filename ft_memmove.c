@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:51:39 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/14 16:14:50 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:38:24 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (0);
 	if (s < d)
 	{
-		while (i)
+		while (i + 1)
 		{
 			d[i] = s[i];
 			i--;
 		}
-		d[i] = s[i];
 		return (dst);
 	}
 	ft_cpymem (d, s, len);
