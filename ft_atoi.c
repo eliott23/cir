@@ -6,13 +6,11 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 09:17:47 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/14 00:27:26 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/14 13:25:10 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_skip_signe(int *i, const char *str, int *s)
+static void	ft_skip_signe(int *i, const char *str, int *s)
 {
 	if (str[*i] == '-' || str[*i] == '+')
 	{
@@ -22,7 +20,7 @@ void	ft_skip_signe(int *i, const char *str, int *s)
 	}
 }
 
-int	ft_count_num(const char *str, int i)
+static int	ft_count_num(const char *str, int i)
 {
 	int	l;
 
