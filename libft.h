@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/15 18:12:43 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/15 20:57:39 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ void	*ft_memchr(const void *s, int c, size_t n); //check
 int	ft_memcmp(const void *s1, const void *s2, size_t n); //check
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len); //check
 int ft_atoi(const char *str); //check
-char	*ft_strdup(const char *s1);
+char	*ft_strdup(const char *s1); //check
+char	*ft_substr(char const *s, unsigned int start, size_t len); //check
+char *ft_strjoin(char const *s1, char const *s2); //check
+char *ft_strtrim(char const *s1, char const *set);
 #endif
