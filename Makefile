@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_calloc.c
+CFILE=ft_substr.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c
@@ -29,7 +29,7 @@ segfault :
 	cc $(FLAGS) $(MYFILES) $(SFLAGS)
 
 cp :
-	rm ../libft/$(filter-out $@,$(MAKECMDGOALS))
+	rm -f ../libft/$(filter-out $@,$(MAKECMDGOALS))
 	cp $(filter-out $@,$(MAKECMDGOALS)) ../libft/
 gcp :
 	rm ../libft/ft_*
