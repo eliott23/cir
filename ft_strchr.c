@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 09:49:13 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/11 09:49:55 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/15 12:11:59 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if (s[i] == c)
-			return ((char *) s + i);
+			return ((char *)s + i);
 		i++;
 	}
 	if (s[i] == c)
-		return ((char *) s + i);
+		return ((char *)s + i);
 	return (0);
 }
