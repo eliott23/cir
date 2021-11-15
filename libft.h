@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/15 20:57:39 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/15 21:59:17 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 void	ps(char *str);
 void	pi(int	tab);
 void	ft_put_tab(size_t b, int	*c);
+void	pc(char c, int i);
 
 int	ft_isalpha(int c); // check
 int	ft_isdigit(int c); // check
