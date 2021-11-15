@@ -34,3 +34,7 @@ cp :
 gcp :
 	rm ../libft/ft_*
 	cp $(filter-out $(MYFILES),ft_*) ../libft/
+h :
+	vim libft.h
+check :
+	cat ../libft/$(filter-out $@,$(MAKECMDGOALS))
