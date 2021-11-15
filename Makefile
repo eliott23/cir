@@ -2,7 +2,7 @@
 CFILE=ft_calloc.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=ft_pi.c ft_ps.c ft_put_tab.c ft_strlen.c
+MYFILES=ft_pi.c ft_ps.c ft_put_tab.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)
@@ -31,3 +31,6 @@ segfault :
 cp :
 	rm ../libft/$(filter-out $@,$(MAKECMDGOALS))
 	cp $(filter-out $@,$(MAKECMDGOALS)) ../libft/
+gcp :
+	rm ../libft/ft_*
+	cp $(filter-out $(MYFILES),ft_*) ../libft/
