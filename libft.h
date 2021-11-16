@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/15 21:59:17 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/16 23:59:55 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ int ft_atoi(const char *str); //check
 char	*ft_strdup(const char *s1); //check
 char	*ft_substr(char const *s, unsigned int start, size_t len); //check
 char *ft_strjoin(char const *s1, char const *s2); //check
-char *ft_strtrim(char const *s1, char const *set);
+char *ft_strtrim(char const *s1, char const *set); //check
 #endif
