@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_strtrim.c
+CFILE=ft_strjoin.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c ft_strlen.c ft_pc.c
@@ -38,3 +38,6 @@ h :
 	vim libft.h
 check :
 	cat ../libft/$(filter-out $@,$(MAKECMDGOALS))
+lc :
+	rm ../libft/*.o
+	rm ../libft/libft.a

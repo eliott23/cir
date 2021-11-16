@@ -6,13 +6,13 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:54:26 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/16 16:59:04 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:03:44 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_in(char c, char *s)
+static int	ft_is_in(const char c, char *s)
 {
 	int	i;
 
