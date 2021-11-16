@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 14:10:32 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/16 15:25:47 by aababach         ###   ########.fr       */
+/*   Created: 2021/11/16 16:54:26 by aababach          #+#    #+#             */
+/*   Updated: 2021/11/16 16:59:04 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	max_i;
 
 	if (!s1)
-		return (NULL);
-	if (ft_strlen(s1) == 0)
-		return (ft_strdup(""));
+		return (0);
 	len = ft_strlen(s1);
 	max_i = len - 1;
 	min_i = 0;
@@ -44,9 +42,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		min_i++;
 	while (ft_is_in(s1[max_i], (char *)set))
 		max_i--;
-	if (min_i == ft_strlen(s1))
+	if (min_i == len)
 		return (ft_strdup(""));
-	str = malloc(sizeof(char) * (max_i - min_i + 2));
+	str = malloc(sizeof(char) * max_i - min_i + 2);
 	if (!str)
 		return (0);
 	len = 0;
