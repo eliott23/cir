@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 16:54:26 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/16 17:03:44 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/16 17:07:20 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	min_i;
 	size_t	max_i;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (0);
 	len = ft_strlen(s1);
 	max_i = len - 1;
