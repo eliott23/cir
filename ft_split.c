@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:56:49 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/17 20:40:45 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/17 21:11:57 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,46 +59,56 @@ static int	ft_next_substr(char const *s, char c)
 	return (0);
 }
 
-static int	ft_fuck_norms(int *a, char **str, char *s, char c)
+static int	ft_fuc_norms(int *a, const char *s, char c, int *i)
 {
-	char	**str;
-
+	*i = 0;
 	*a = 0;
 	if (!s)
 		return (0);
 	while (s[*a] == c)
 		(*a)++;
+	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **str;
-	int	i;
-	int	a;
-	int	b;
-	int	len;
+	char	**str;
+	int		i;
+	int		a;
+	int		b;
+	int		len;
 
-	i = 0;
-	b = 0;
-	a = 0;
-	str = malloc (sizeof(char *) * (ft_count_sep(s,c) + 1));
-	if (!str)
+	if (!s)
 		return (0);
-	while (s[a] == c)
-		a++;
-	while (i < ft_count_sep(s,c))
+	str = malloc (sizeof(char *) * (ft_count_sep(s, c) + 1));
+	if (!ft_fuc_norms(&a, s, c, &i) || !str)
+		return (0);
+	while (i < ft_count_sep(s, c))
 	{
-		str[i] = malloc (sizeof(char) * ft_count_length(&s[a],c) + 1);
+		str[i] = malloc (sizeof(char) * ft_count_length(&s[a], c) + 1);
 		if (!str[i])
 			return (0);
 		b = 0;
-		len = ft_count_length(&s[a],c);
+		len = ft_count_length(&s[a], c);
 		while (b < len)
 			str[i][b++] = s[a++];
-		str[i][b] = 0;
-		i++;
-		a = ft_next_substr(&s[a],c) + a;
+		str[i++][b] = 0;
+		a = ft_next_substr(&s[a], c) + a;
 	}
 	str[i] = 0;
 	return (str);
 }
+/*
+int	main()
+{
+	char z[] = " zebi zebi zebi";
+	char **str = ft_split(z,' ');
+	int	i = 0;
+
+	while (str[i])
+	{
+		ps(str[i]);
+		i++;
+	}
+}
+*/
