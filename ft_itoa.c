@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 22:50:44 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/17 23:23:00 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/17 23:57:37 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static char	*ft_rev_num(char *num, int s)
 	i = 0 + s;
 	len = ft_strlen(num);
 	len--;
+	if (i)
+		num[0] = 45;
 	while (len >= i)
 	{
 		temp = num[len];
@@ -71,15 +73,18 @@ char	*ft_itoa(int n)
 		i++;
 		n /= 10;
 	}
-	pi(i);
-	num[i++] = n + 48;
-	pi(i);
+	num[i] = n + 48;
+	i++;
 	num[i] = 0;
-	return (num);
+	ft_rev_num(num,s);
+	ps("this is num ");
+	ps(num);
+	return (ft_rev_num(num,s));
 }
 
 int	main()
 {
-	int	n = -1080;
-	ps(ft_itoa(n));
+	char z[] = "-1092";
+	int	c = -345;
+	ps(ft_itoa(c));
 }
