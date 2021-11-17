@@ -6,7 +6,7 @@ MYFILES=ft_pi.c ft_ps.c ft_put_tab.c ft_strlen.c ft_pc.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)
-	cc $(FLAGS) $^ -I .
+	cc $^ -I .
 gn : *.c
 	norminette $(filter-out	$(MYFILES),$^)
 n : $(CFILE)
