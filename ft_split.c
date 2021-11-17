@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:56:49 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/17 20:05:43 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/17 20:40:45 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,12 @@ static int	ft_next_substr(char const *s, char c)
 	}
 	return (0);
 }
-static void	ft_fuck_norms(int *a, char **str, char *s, char c)
+
+static int	ft_fuck_norms(int *a, char **str, char *s, char c)
 {
 	char	**str;
 
-	*a
+	*a = 0;
 	if (!s)
 		return (0);
 	while (s[*a] == c)
@@ -80,8 +81,6 @@ char **ft_split(char const *s, char c)
 	i = 0;
 	b = 0;
 	a = 0;
-	if (!s)
-		return (0);
 	str = malloc (sizeof(char *) * (ft_count_sep(s,c) + 1));
 	if (!str)
 		return (0);
