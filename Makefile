@@ -26,7 +26,7 @@ s :
 git :
 	./gits
 segfault :
-	cc $(FLAGS) $(MYFILES) $(SFLAGS)
+	cc $(FLAGS) $(CFILE) $(MYFILES) $(SFLAGS)
 
 cp :
 	rm -f ../libft/$(filter-out $@,$(MAKECMDGOALS))
