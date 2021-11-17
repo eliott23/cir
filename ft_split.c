@@ -9,9 +9,15 @@ static int	ft_count_sep(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1])
+		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
+		{
 			sc++;
-		i++;
+			i++;
+			while (s[i] == c)
+				i++;
+		}
+		else
+			i++;
 	}
 	return (sc);
 }
@@ -36,7 +42,10 @@ static int	ft_next_substr(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c)
+		{
 			sep++;
+			i++;
+		}
 		if (sep)
 			return (i);
 		i++;
@@ -48,28 +57,27 @@ char **ft_split(char const *s, char c)
 {
 	char **str;
 	int	i;
-//	int	a;
-//	int	b;
+	int	a;
+	int	b;
 
 	i = 0;
-	str = malloc (sizeof(char) * ft_count_sep(s,c) - 1);
-/*	if (!str)
+	a = 0;
+	str = malloc (sizeof(char) * ft_count_sep(s,c) + 1);
+	if (!str)
 		return (0);
-	while (i < ft_count_sep(s,c) - 1)
+	while (i < ft_count_sep(s,c))
 	{
-		str[i] = malloc (sizeof(char) * ft_count_length(&s[a],c) + 1);
+		str[i] = malloc(sizeof(char) * ft_count_length(&s[a],c) + 1);
 		if (!str[i])
 			return (0);
 		i++;
 		a = ft_next_substr(&s[a],c);
 	}
-
-
-
+	str[i] = 0;
 	a = 0;
 	i = 0;
 	b = 0;
-	while (i < ft_count_length(s,c) - 1)
+	while (i < ft_count_length(s,c))
 	{
 		b = 0;
 		while (b < ft_count_length(&s[a],c))
@@ -81,20 +89,20 @@ char **ft_split(char const *s, char c)
 		i++;
 		a = ft_next_substr(&s[a],c);
 	}
-	*/
 	return (str);
 }
 
 int	main()
 {
-	char **str;
-	int	i = 0;
+	//char **str;
+	//int	i = 0;
 
-	str = ft_split("zebi zebi zebi",' ');
-	while (i < 3)
-	{
-		ps (str[i]);
-		i++;
-	}
-	free(str);
+	printf("%d", ft_count_sep("", ' '));
+	// str = ft_split("zebi zebi zebi",' ');
+	//while (i < 3)
+	//{
+	//	ps (str[i]);
+	//	i++;
+	//}
+	//free(str);
 }
