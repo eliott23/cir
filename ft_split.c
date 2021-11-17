@@ -62,7 +62,7 @@ char **ft_split(char const *s, char c)
 
 	i = 0;
 	a = 0;
-	str = malloc (sizeof(char) * ft_count_sep(s,c) + 1);
+	str = malloc (sizeof(char *) * (ft_count_sep(s,c) + 1));
 	if (!str)
 		return (0);
 	while (i < ft_count_sep(s,c))
@@ -76,7 +76,6 @@ char **ft_split(char const *s, char c)
 	str[i] = 0;
 	a = 0;
 	i = 0;
-	b = 0;
 	while (i < ft_count_length(s,c))
 	{
 		b = 0;
@@ -94,15 +93,15 @@ char **ft_split(char const *s, char c)
 
 int	main()
 {
-	//char **str;
-	//int	i = 0;
+	char **str;
+	int	i = 0;
 
-	printf("%d", ft_count_sep("", ' '));
-	// str = ft_split("zebi zebi zebi",' ');
-	//while (i < 3)
-	//{
-	//	ps (str[i]);
-	//	i++;
-	//}
-	//free(str);
+//	printf("%d", ft_count_length("dfg     sdg  dfg  dg", ' '));
+	str = ft_split("zebi zebi zebi",' ');
+	while (str[i])
+	{
+		printf("%s\n", str[i]);
+		i++;
+	}
+	free(str);
 }
