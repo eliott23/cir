@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 18:56:49 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/17 21:11:57 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/17 21:13:04 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,17 +98,3 @@ char	**ft_split(char const *s, char c)
 	str[i] = 0;
 	return (str);
 }
-/*
-int	main()
-{
-	char z[] = " zebi zebi zebi";
-	char **str = ft_split(z,' ');
-	int	i = 0;
-
-	while (str[i])
-	{
-		ps(str[i]);
-		i++;
-	}
-}
-*/
