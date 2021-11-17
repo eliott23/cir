@@ -76,7 +76,7 @@ char **ft_split(char const *s, char c)
 	str[i] = 0;
 	a = 0;
 	i = 0;
-	while (i < ft_count_length(s,c))
+	while (i < ft_count_sep(s,c))
 	{
 		b = 0;
 		while (b < ft_count_length(&s[a],c))
@@ -97,7 +97,7 @@ int	main()
 	int	i = 0;
 
 //	printf("%d", ft_count_length("dfg     sdg  dfg  dg", ' '));
-	str = ft_split("zebi zebi zebi",' ');
+	str = ft_split("   zebi zebi zebi",' ');
 	while (str[i])
 	{
 		printf("%s\n", str[i]);
