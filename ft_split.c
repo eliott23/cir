@@ -43,20 +43,30 @@ char **ft_split(char const *s, char c);
 		if (!str[i])
 			return (0);
 		i++;
-		a += ft_count_length(&s[a],c) - a + 1;
+		a = ft_count_length(&s[a],c) + 1;
 	}
 	a = 0;
 	i = 0;
 	b = 0;
 	while (i < ft_count_length(s,c) - 1)
 	{
+		b = 0;
 		while (b < ft_count_length(s[a],c))
 		{
 			str[i][b] = s[b];
 			b++;
 		}
+		str[i][b] = 0;
 		i++;
-		a+= ft_count_length(&s[a],c) - a + 1;
+		a = ft_count_length(&s[a],c) + 1;
 	}
+	return (str);
+}
 
+int	main()
+{
+	char **str;
+
+	str = ft_split("zebi zebi zebi",' ');
+	free(str);
 }
