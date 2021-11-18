@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 22:50:44 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/18 16:31:46 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/18 18:11:31 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,40 @@ static int	ft_count_num(int n)
 	return (1);
 }
 
-static char	*ft_rev_num(char *num, int s)
+static char	*ft_rev_num(char *num, int s, int n)
 {
 	int	len;
 	int	i;
 	int	temp;
+
+	i = 0;
+	if (s)
+	{
+		num[0] = 45;
+		i = 1;
+	}
+	ps("this is num ");
+	ps(num);
+	len = ft_count_num(n) - 1 + i;
+	while (len >= i)
+	{
+		temp = num[i];
+		num[i] = num[len];
+		num[len] = temp;
+		len--;
+		i++;
+	}
 	return (num);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*num;
+	int		s_n;
 	int		i;
 	int		s;
 
+	s_n = n;
 	s = 0;
 	if (n < 0)
 	{
@@ -64,12 +84,13 @@ char	*ft_itoa(int n)
 	num[i] = n + 48;
 	i++;
 	num[i] = 0;
-	ps(&num[1]);
-	return (ft_rev_num(num, s));
+	return (ft_rev_num(num, s, s_n));
 }
 
 int	main()
 {
-	int	c = -623;
-	ps(ft_itoa(c));
+	int	i = -2147483648;
+	ps(ft_itoa(i));
+//	char	z[] = "zebi";
+//	ps(ft_rev_num(z,0,1111));
 }
