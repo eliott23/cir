@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 22:50:44 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/18 19:17:29 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:44:26 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ static int	ft_count_num(int n)
 	return (1);
 }
 
-static char	*ft_rev_num(char *num, int s, int n)
+static char	*ft_rev_num(char *num, int i, int n)
 {
 	int	len;
-	int	i;
 	int	temp;
 
-	i = 0 + s;
 	len = ft_count_num(n) - 1 + i;
+	if (i == 2)
+		i--;
 	while (len >= i)
 	{
 		temp = num[i];
@@ -55,9 +55,8 @@ static void	ft_fill(int i, char *num, int n)
 	if (i)
 	{
 		num[0] = 45;
-		i = 1;
 		if (i == 2)
-			num[1] == '8';
+			num[1] = '8';
 	}
 	while (n >= 10)
 	{
@@ -72,23 +71,22 @@ char	*ft_itoa(int n)
 {
 	char	*num;
 	int		i;
-	int		s;
 
-	s = 0;
+	i = 0;
 	if (n < 0)
 	{
-		s++;
+		i++;
 		if (n == -2147483648)
 		{
-			s++;
+			i++;
 			n = 214748364;
 		}
-		n *= -1;
+		else
+			n *= -1;
 	}
-	i = 0 + s;
-	num = malloc (sizeof(char) * ft_count_num(n) + 1 + s);
+	num = malloc (sizeof(char) * ft_count_num(n) + 1 + i);
 	if (!num)
 		return (0);
 	ft_fill(i, num, n);
-	return (ft_rev_num(num, s, n));
+	return (ft_rev_num(num, i, n));
 }
