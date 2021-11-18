@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 22:50:44 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/18 18:11:31 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:17:29 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,7 @@ static char	*ft_rev_num(char *num, int s, int n)
 	int	i;
 	int	temp;
 
-	i = 0;
-	if (s)
-	{
-		num[0] = 45;
-		i = 1;
-	}
-	ps("this is num ");
-	ps(num);
+	i = 0 + s;
 	len = ft_count_num(n) - 1 + i;
 	while (len >= i)
 	{
@@ -57,40 +50,45 @@ static char	*ft_rev_num(char *num, int s, int n)
 	return (num);
 }
 
+static void	ft_fill(int i, char *num, int n)
+{
+	if (i)
+	{
+		num[0] = 45;
+		i = 1;
+		if (i == 2)
+			num[1] == '8';
+	}
+	while (n >= 10)
+	{
+		num[i++] = n % 10 + 48;
+		n /= 10;
+	}
+	num[i++] = n + 48;
+	num[i] = 0;
+}
+
 char	*ft_itoa(int n)
 {
 	char	*num;
-	int		s_n;
 	int		i;
 	int		s;
 
-	s_n = n;
 	s = 0;
 	if (n < 0)
 	{
+		s++;
+		if (n == -2147483648)
+		{
+			s++;
+			n = 214748364;
+		}
 		n *= -1;
-		s = 1;
 	}
 	i = 0 + s;
 	num = malloc (sizeof(char) * ft_count_num(n) + 1 + s);
 	if (!num)
 		return (0);
-	while (n >= 10)
-	{
-		num[i] = n % 10 + 48;
-		i++;
-		n /= 10;
-	}
-	num[i] = n + 48;
-	i++;
-	num[i] = 0;
-	return (ft_rev_num(num, s, s_n));
-}
-
-int	main()
-{
-	int	i = -2147483648;
-	ps(ft_itoa(i));
-//	char	z[] = "zebi";
-//	ps(ft_rev_num(z,0,1111));
+	ft_fill(i, num, n);
+	return (ft_rev_num(num, s, n));
 }
