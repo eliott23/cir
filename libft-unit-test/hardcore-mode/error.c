@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: inyancat <inyancat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 11:42:15 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/19 12:10:44 by aababach         ###   ########.fr       */
+/*   Created  2016/11/11 16:47:32 by inyancat          #+#    #+#             */
+/*   Updated  2016/11/12 20:21:42 by inyancat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "utils.h"
+#include <stdarg.h>
+extern int g_log_fd;
 
-void	ft_putendl_fd(char *s, int fd)
+void error(int code, int a, const char *pattern, ...)
 {
-	int		i;
-	char	c;
+	va_list	va;
 
-	c = '\n';
-	i = 0;
-	if (s)
-	{
-		while (s[i])
-		{
-			write (fd, &s[i], 1);
-			i++;
-		}
-		write (fd, &c, 1);
-	}
+	va_start(va, pattern);
+	(void)a;
+	vdprintf(g_log_fd, pattern, va);
+	dprintf(g_log_fd, "\n");
+	va_end(va);
+	exit(code);
 }

@@ -2,10 +2,10 @@
 CFILE=ft_putendl_fd.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=ft_pi.c ft_strdup.c ft_ps.c ft_put_tab.c ft_strlen.c ft_pc.c
+MYFILES=ft_pi.c ft_ps.c ft_put_tab.c  ft_pc.c
 all : a.out
 	./a.out
-a.out : $(CFILE) $(MYFILES)
+a.out : *.c
 	cc $(FLAGS) $^ -I .
 gn : *.c
 	norminette $(filter-out	$(MYFILES),$^)
