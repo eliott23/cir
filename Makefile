@@ -2,7 +2,7 @@
 CFILE=ft_.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
-MYFILES=ft_pi.c ft_ps.c ft_put_tab.c ft_strlen.c ft_pc.c
+MYFILES=ft_pi.c ft_strdup.c ft_ps.c ft_put_tab.c ft_strlen.c ft_pc.c
 all : a.out
 	./a.out
 a.out : $(CFILE) $(MYFILES)

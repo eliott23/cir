@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/18 20:14:59 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/19 09:50:13 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,5 @@ char *ft_strjoin(char const *s1, char const *s2); //check
 char *ft_strtrim(char const *s1, char const *set); //check
 char    **ft_split(char const *s, char c); //check
 char    *ft_itoa(int n); //check
-char	*ft_strmapi(char const *s, char (*f)(unsigned
-int, char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)); //check
 #endif
