@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/19 11:50:34 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/19 12:13:17 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*)); //check
 void	ft_putchar_fd(char c, int fd); //check
 void	ft_putendl_fd(char *s, int fd); //check
 void	ft_putstr_fd(char *s, int fd); //check
+void	ft_putnbr_fd(int n, int fd);
 #endif
