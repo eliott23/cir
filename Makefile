@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_putnbr_fd.c
+CFILE=ft_memcpy.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c  ft_pc.c

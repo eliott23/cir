@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 17:11:55 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/14 14:34:02 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/21 23:53:42 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	s = (unsigned char *)src;
 	while (n)
 	{
-		*d = *s;
-		d++;
-		s++;
+		*d++ = *s++;
 		n--;
 	}
 	return (dst);
