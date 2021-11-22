@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/22 15:36:18 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/22 17:16:45 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,6 @@ typedef struct	s_list
 	void	*content;
 	struct	s_list	*next;
 } t_list;
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 #endif
