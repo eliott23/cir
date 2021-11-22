@@ -1,5 +1,5 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
-CFILE=ft_lstadd_front.c
+CFILE=ft_lstsize_bonus.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c  ft_pc.c
@@ -29,15 +29,15 @@ segfault :
 	cc $(FLAGS) $(CFILE) $(MYFILES) $(SFLAGS)
 
 cp :
-	rm -f ../libft/$(filter-out $@,$(MAKECMDGOALS))
-	cp $(filter-out $@,$(MAKECMDGOALS)) ../libft/
+	rm -f ./libft/$(filter-out $@,$(MAKECMDGOALS))
+	cp $(filter-out $@,$(MAKECMDGOALS)) ./libft/
 gcp :
-	rm ../libft/ft_*
-	cp $(filter-out $(MYFILES),ft_*) ../libft/
+	rm ./libft/ft_*
+	cp $(filter-out $(MYFILES),ft_*) ./libft/
 h :
 	vim libft.h
 check :
-	cat ../libft/$(filter-out $@,$(MAKECMDGOALS))
+	cat ./libft/$(filter-out $@,$(MAKECMDGOALS))
 lc :
-	rm ../libft/*.o
-	rm ../libft/libft.a
+	rm ./libft/*.o
+	rm ./libft/libft.a
