@@ -6,9 +6,12 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:39:45 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/14 17:20:40 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/22 00:20:18 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+#include <ctype.h>
 
 int	ft_isalpha(int c)
 {

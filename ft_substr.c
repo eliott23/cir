@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:49:27 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/15 18:26:16 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/22 01:16:47 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	u_l = (size_t)start;
 	s_i = 0;
-	if (len == 0 || s == NULL)
+	if (!len || !s)
 		return (0);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
