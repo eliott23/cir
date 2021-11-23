@@ -32,9 +32,9 @@ segfault :
 cp :
 	rm -rf libft/$(filter-out $@,$(MAKECMDGOALS))
 	cp $(filter-out $@,$(MAKECMDGOALS)) libft/
-gcp :
+gcp : *.c
 	rm -rf libft/ft_*
-	cp $(filter-out $(MYFILES),ft_*) libft/
+	cp $(filter-out $(MYFILES),$^) libft/
 h :
 	vim libft.h
 check :
