@@ -6,9 +6,17 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:23:24 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/23 15:26:51 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:48:03 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
+}
