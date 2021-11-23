@@ -8,8 +8,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temp = temp->next;
 	temp = new;
 	new->next = NULL;
-	if (temp == lst)
-		ps("yes");
+	if (temp == *lst)
+		printf("yes");
 }
 /*int	main()
 {
