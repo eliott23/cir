@@ -8,10 +8,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temp = temp->next;
 	temp = new;
 	new->next = NULL;
-	temp = *lst;
+	if (temp == lst)
+		ps("yes");
 }
-
-int	main()
+/*int	main()
 {
 	t_list	*head;
 
@@ -39,3 +39,4 @@ int	main()
 		head = head->next;
 	}
 }
+*/

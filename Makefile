@@ -42,3 +42,7 @@ check :
 lc :
 	rm libft/*.o
 	rm libft/libft.a
+rgcp : *.c
+	rm $(filter-out $(MYFILES),$^) *.h
+	cp libft/*.c .
+	cp libft/*.h .
