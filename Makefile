@@ -1,6 +1,6 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
 
-CFILE=ft_lstiter_bonus.c
+CFILE=ft_lstmap_bonus.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c  ft_pc.c
