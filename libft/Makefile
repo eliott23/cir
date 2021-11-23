@@ -15,7 +15,7 @@ add : *_bonus.o
 %_bonus.o : %_bonus.c
 	cc $(FLAGS) -c $^
 clean :
-	rm *.o
+	rm -f *.o
 fclean : clean
 	rm -f libft.a
 re : fclean all
