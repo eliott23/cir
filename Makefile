@@ -1,6 +1,6 @@
 #MAKEFILE TO TEST EACH .C FILE ALONE
 
-CFILE=ft_lstmap_bonus.c
+CFILE=ft_lstclear_bonus.c
 FLAGS=-Wall -Wextra -Werror
 SFLAGS=-fsanitize=address
 MYFILES=ft_pi.c ft_ps.c ft_put_tab.c  ft_pc.c
@@ -27,7 +27,7 @@ s :
 git :
 	./gits
 segfault :
-	cc $(FLAGS) $(CFILE) $(MYFILES) $(SFLAGS)
+	cc $(FLAGS) $(CFILE) ft_lstdelone_bonus.c $(SFLAGS)
 
 cp :
 	rm -rf libft/$(filter-out $@,$(MAKECMDGOALS))
