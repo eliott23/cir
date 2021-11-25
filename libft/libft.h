@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:15:52 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/23 16:59:10 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:11:21 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len); //check
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize); //check
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize); //check
 int		ft_toupper(int c); //check
+void	*ft_calloc(size_t count, size_t size);
+int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c); //check
 char	*ft_strrchr(const char *s, int c); //check
 int		ft_strncmp(const char *s1, const char *s2, size_t n); //check
