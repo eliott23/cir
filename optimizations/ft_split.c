@@ -35,11 +35,28 @@ int	ft_tools(char const *s, char c, int *i, int	opt)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
+	int		a;
+	int		b;
 	char	**rslt;
 
 	i = 0;
+	a = 0;
+	if (!s)
+		return (0);
 	ft_tools(s, c, &i, 1);
-	rslt = malloc((sizeof(char *) * ft_tools(s, c, &i, 2) + 1);
+	rslt = malloc(sizeof(char *) * ft_tools(s, c, &i, 2) + 1);
+	if (!rslt)
+		return (0);
+	while (a < ft_tools(s , c, &i, 2) + 1)
+	{
+		b = 0;
+		rslt[a] = malloc(sizeof(char) * ft_tools(s, c, &i, 0) + 1);
+		while (b < ft_tools(s + i, c, &i, 0))
+			rslt[a][b++] = s[i++];
+		rslt[a][b] = 0;
+		ft_tools(s, c
+	}
+	rslt[a] = 0;
 	return (rslt);
 }
 
