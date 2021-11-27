@@ -11,9 +11,8 @@ int	ft_tools(char const *s, char c, int *i, int	opt)
 	len = 0;
 	if (!opt)
 	{
-		while ((s + *i)[len] && (s + *i)[len] != c)
+		while ((s + (*i))[len] && (s + (*i))[len] != c)
 			len++;
-		printf("no changes to %d\n",*i);
 	}
 	if (opt == 1)
 	{
@@ -31,7 +30,6 @@ int	ft_tools(char const *s, char c, int *i, int	opt)
 	}
 	return (len);
 }
-
 int	ft_fill(char **rslt, char const *s, int i, char c)
 {
 	int	a;
@@ -41,14 +39,16 @@ int	ft_fill(char **rslt, char const *s, int i, char c)
 	b = 0;
 	while (a < ft_tools(s , c, &i, 2) + 1)
 	{
-		printf("this is i %d\n",i);
 		b = 0;
 		rslt[a] = malloc(sizeof(char) * ft_tools(s, c, &i, 0) + 1);
 		if (!rslt[a])
 			return (0);
-		printf("this is the word length %d\n", ft_tools(s, c, &i, 0));
 		while (b < ft_tools(s, c, &i, 0))
-			rslt[a][b++] = s[i++];
+		{
+			rslt[a][b] = s[i];
+			b++;
+			i++;
+		}
 		rslt[a][b] = 0;
 		ft_tools(s, c, &i, 1);
 		a++;
@@ -56,7 +56,6 @@ int	ft_fill(char **rslt, char const *s, int i, char c)
 	rslt[a] = 0;
 	return (1);
 }
-
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -73,20 +72,6 @@ char	**ft_split(char const *s, char c)
 	rslt = malloc(sizeof(char *) * ft_tools(s, c, &i, 2) + 1);
 	if (!rslt)
 		return (0);
-	/*
-	while (a < ft_tools(s , c, &i, 2) + 1)
-	{
-		b = 0;
-		rslt[a] = malloc(sizeof(char) * ft_tools(s, c, &i, 0) + 1);	
-
-		while (b < ft_tools(s, c, &i, 0))
-			rslt[a][b++] = s[i++];
-		rslt[a][b] = 0;
-		ft_tools(s, c, &i, 1);
-		a++;
-	}
-	rslt[a] = 0;
-	*/
 	if (!ft_fill(rslt, s, i, c))
 		return (0);
 	return (rslt);
@@ -102,5 +87,4 @@ int	main()
 		printf("%s\n",test[i]);
 		i++;
 	}
-//	printf("%d\n",ft_tools(s, ' ', &i, 0));
 }
