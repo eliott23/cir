@@ -4,14 +4,16 @@
 // ( opt == 2 ) --> count words ;
 int	ft_tools(char const *s, char c, int *i, int	opt)
 {
-	int	len;
-	int	words;
+	int			len;
+	char		*h;
+	int			words;
 
 	words = 0;
 	len = 0;
+	h = (char *)s;
 	if (!opt)
 	{
-		while ((s + (*i))[len] && (s + (*i))[len] != c)
+		while ((h + *i)[len] && (h + *i)[len] != c)
 			len++;
 	}
 	if (opt == 1)
@@ -48,6 +50,8 @@ int	ft_fill(char **rslt, char const *s, int i, char c)
 			rslt[a][b] = s[i];
 			b++;
 			i++;
+			printf("this is i %d\n",i);
+			printf("this is b %d\n",b);
 		}
 		rslt[a][b] = 0;
 		ft_tools(s, c, &i, 1);
@@ -82,9 +86,10 @@ int	main()
 	int	i = 0;
 	char	*s = "sev nne 9845fv eff c";
 	char	**test = ft_split(s, ' ');
-	while (i < 5)
-	{
-		printf("%s\n",test[i]);
-		i++;
-	}
+//	while (i < 5)
+//	{
+//		printf("%s\n",test[i]);
+//		i++;
+//	}
+//	printf("%d\n", ft_tools(s, ' ', &i, 0));
 }
