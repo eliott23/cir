@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 16:02:54 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/28 16:10:02 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/28 18:44:23 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 #include "libft.h"
 // (opt == 0 ) --> count length ;
 // ( opt == 1 ) --> skip sep ;
+
 int	ft_tools(char const *s, char c, int *i, int opt)
 {
 	int			len;
