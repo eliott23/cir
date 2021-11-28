@@ -1,6 +1,6 @@
 NAME=libft.a
 FLAGS=-Wall -Wextra -Werror
-CMFILES=ft_isalpha.c \
+MCFILES=ft_isalpha.c \
 	   ft_isdigit.c \
 	   ft_isalnum.c \
 	   ft_isascii.c \
@@ -45,16 +45,17 @@ BCFILES= ft_lstadd_back_bonus.c \
 		ft_lstsize_bonus.c
 
 BOFILES := $(BCFILES:.c=.o)
-MOFILES := $(MCFILES:.C=.o)
+MOFILES := $(MCFILES:.c=.o)
 
 all : $(NAME)
 $(NAME) : $(MOFILES)
 	ar -cr $(NAME) $^
-%.o : %.c
+$(MOFILES) : $(MCFILES)
 	cc  $(FLAGS) -c $(MCFILES)
-bonus : $(BOFILES)
+bonus : add
+add : $(BOFILES)
 	ar -cr $(NAME) $^
-$(BOFILES): $(BCFILES)
+$(BOFILES) : $(BCFILES)
 	cc $(FLAGS) -c $^
 clean :
 	rm -f *.o
