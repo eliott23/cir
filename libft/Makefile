@@ -49,16 +49,17 @@ MOFILES := $(MCFILES:.c=.o)
 
 all : $(NAME)
 $(NAME) : $(MOFILES)
-	ar -cr $(NAME) $^
+
+.o : .c $(NAME)
+	ar -cr $(NAME) $@
 $(MOFILES) : $(MCFILES)
 	cc  $(FLAGS) -c $(MCFILES)
-bonus : add
-add : $(BOFILES)
+bonus: $(BOFILES)
 	ar -cr $(NAME) $^
 $(BOFILES) : $(BCFILES)
 	cc $(FLAGS) -c $^
-clean :
+clean:
 	rm -f *.o
-fclean : clean
+fclean: clean
 	rm -f libft.a
 re : fclean all
