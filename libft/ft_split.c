@@ -6,7 +6,7 @@
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 00:32:21 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/28 00:36:40 by aababach         ###   ########.fr       */
+/*   Updated: 2021/11/28 03:41:58 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	ft_tools(char const *s, char c, int *i, int opt)
 {
 	int			len;
 	int			temp;
+	char		*h;
 	int			words;
 
 	temp = *i;
