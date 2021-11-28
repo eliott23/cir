@@ -34,22 +34,27 @@ CMFILES=ft_isalpha.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
+BCFILES= ft_lstadd_back_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c
 
-OMFILES := $(CMFILES:.C=.O)
+BOFILES := $(BCFILES:.c=.o)
+MOFILES := $(MCFILES:.C=.o)
 
 all : $(NAME)
-
-$(NAME) : $(OMFILES)
+$(NAME) : $(MOFILES)
 	ar -cr $(NAME) $^
-
 %.o : %.c
-	cc  $(FLAGS) -c $(CMFILES)
-
-bonus : add
-
-add : *_bonus.o
+	cc  $(FLAGS) -c $(MCFILES)
+bonus : $(BOFILES)
 	ar -cr $(NAME) $^
-%_bonus.o : %_bonus.c
+$(BOFILES): $(BCFILES)
 	cc $(FLAGS) -c $^
 clean :
 	rm -f *.o
