@@ -5,96 +5,94 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aababach <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 18:56:49 by aababach          #+#    #+#             */
-/*   Updated: 2021/11/17 21:13:04 by aababach         ###   ########.fr       */
+/*   Created: 2021/11/28 00:32:21 by aababach          #+#    #+#             */
+/*   Updated: 2021/11/28 00:36:40 by aababach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_count_sep(char const *s, char c)
+// (opt == 0 ) --> count length ;
+// ( opt == 1 ) --> skip sep ;
+int	ft_tools(char const *s, char c, int *i, int opt)
 {
-	int	i;
-	int	sc;
+	int			len;
+	int			temp;
+	int			words;
 
-	sc = 0;
-	i = 0;
-	while (s[i])
+	temp = *i;
+	words = 0;
+	len = 0;
+	if (!opt)
 	{
-		if (s[i] != c && (s[i + 1] == c || !s[i + 1]))
-			sc++;
-		i++;
+		while ((s + temp)[len] && (s + temp)[len] != c)
+			len++;
 	}
-	return (sc);
-}
-
-static int	ft_count_length(char const *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
-static int	ft_next_substr(char const *s, char c)
-{
-	int	i;
-	int	sep;
-
-	sep = 0;
-	i = 0;
-	while (s[i])
+	if (opt)
 	{
-		while (s[i] == c)
+		while (s[*i] == c)
+			(*i)++;
+	}
+	return (len);
+}
+
+int	ft_count_words(char const *s, char c)
+{
+	int	len;
+	int	words;
+
+	words = 0;
+	len = 0;
+	while (s[len] || s[len] == c)
+	{
+		if (s[len] != c && (!s[len + 1] || s[len + 1] == c))
+			words++;
+		len++;
+	}
+	return (words);
+}
+
+int	ft_fill(char **rslt, char const *s, int i, char c)
+{
+	int	a;
+	int	b;
+	int	len;
+
+	a = 0;
+	b = 0;
+	while (a < ft_count_words(s, c))
+	{
+		b = 0;
+		len = ft_tools(s, c, &i, 0);
+		rslt[a] = malloc(sizeof(char) * (len + 1));
+		if (!rslt[a])
+			return (0);
+		while (b < len)
 		{
-			sep++;
+			rslt[a][b] = s[i];
+			b++;
 			i++;
 		}
-		if (sep)
-			return (i);
-		i++;
+		rslt[a][b] = 0;
+		ft_tools(s, c, &i, 1);
+		a++;
 	}
-	return (0);
-}
-
-static int	ft_fuc_norms(int *a, const char *s, char c, int *i)
-{
-	*i = 0;
-	*a = 0;
-	if (!s)
-		return (0);
-	while (s[*a] == c)
-		(*a)++;
+	rslt[a] = 0;
 	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
 	int		i;
-	int		a;
-	int		b;
-	int		len;
+	char	**rslt;
 
+	i = 0;
 	if (!s)
 		return (0);
-	str = malloc (sizeof(char *) * (ft_count_sep(s, c) + 1));
-	if (!ft_fuc_norms(&a, s, c, &i) || !str)
+	ft_tools(s, c, &i, 1);
+	rslt = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!rslt)
 		return (0);
-	while (i < ft_count_sep(s, c))
-	{
-		str[i] = malloc (sizeof(char) * ft_count_length(&s[a], c) + 1);
-		if (!str[i])
-			return (0);
-		b = 0;
-		len = ft_count_length(&s[a], c);
-		while (b < len)
-			str[i][b++] = s[a++];
-		str[i++][b] = 0;
-		a = ft_next_substr(&s[a], c) + a;
-	}
-	str[i] = 0;
-	return (str);
+	if (!ft_fill(rslt, s, i, c))
+		return (0);
+	return (rslt);
 }
