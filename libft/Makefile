@@ -12,6 +12,7 @@ SRC=ft_atoi.c\
     ft_strlcpy.c\
     ft_strncmp.c\
     ft_strrchr.c\
+	ft_striteri.c\
     ft_substr.c\
     ft_toupper.c\
     ft_bzero.c\
